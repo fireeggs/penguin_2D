@@ -1,0 +1,48 @@
+Report of Animating a Hierarchical 2D Object, penguin
+
+Design
+	The design I implemented for this assignment is hierarchical operation. The whole penguin is interactively moves. Their hierarchical implementation is in shape of tree, the relationshiop is body is the parent root of every parts, arm is the child of body, front and back legs are child of body, head is child of body, the upper and lower beak are children of head, front and back foot are children of front and back legs. 
+	
+	Each of the roots are interactively moves, when head is moving the upper  and lower beak follows. Although lower beak moves only up and down, it is moving depends on head because it is child of head. so they move like a one object. As well as head and beak, the other parts must follow their parent parts. 
+	
+	To implement hierarchical operation, i was required to bring every parent-child parts in one platform and share its position and its rotation. since, they share the position, as new parts are required, the new part's position does not need to be recalculated from the actual initial coordinate to destination. it can be calculated from the sharing position. Such as, position, rotation also get to shared, so, if the part is rotationg the child also get to rotate. However, the rotation dos not occur separately in each part, they rotate like one object.
+	
+Part Description
+	
+	part1. Head
+	- the head contains upper and lower beak and eye. The head is child of body. Head is polygon with 5 points. Each points represent the shape of head. p1 is the point of top left coordinate. p2,p3,p4 and p5 are represents other points of head in order of clockwise.
+	
+	part2. upper beak
+	- the upper beak is also polygon with 4 points but this is fixed to head so as head moves by the hindge, the upper beak moves along head too.
+	
+	part3. lower beak
+	- the lower beak is squre shape and it moves up and down along head. Even head rotate by the hindge to body, the lower beak moves up and down along the head because lower beak is the child of head.
+	
+	part4. arm
+	- the arm is polygon with 4 ponts and it rotate by the hindge. p1 represents the top right coordinate of arm. Also p2,p3 and p4 are other points of arm in order of clockwise
+	
+	part5. front leg
+	- front leg has the shape of squre and it is set by an angle to left a bit. it rotate by the hinge that is sticked to body.
+	
+	part6. back leg
+	- back leg has the shape of square and it is set by an angle to right a bit. it rotate by the hinge  
+
+	part7. front foot
+	- it is attached to the front leg and has shape of square. it is set with an angle to left. 
+	
+	part8. front foot
+	- it is attached to the back leg and has shape of square. it is set with an angle to right. 
+	
+
+Transformation
+	The implemented transformation for this assignments are rotate, translate and scale. the rotate are used as there is a joint that rotate along Y or X-axis. Translation is used for setting the part of penguins to the proper coordinates. Scales are used for deciding the size of parts of penguin. 
+
+
+
+
+
+
+
+
+
+	 
